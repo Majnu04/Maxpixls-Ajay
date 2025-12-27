@@ -8,7 +8,8 @@ import {
   CTASection,
   ContactSection,
   Footer,
-  WhatsAppButton
+  WhatsAppButton,
+  VideoGallery
 } from './components';
 
 // --- Main App ---
@@ -34,6 +35,7 @@ export default function App() {
       <main>
         <HeroSlider />
         <FeaturedSection />
+        <VideoGallery />
         <BlogSection />
         <CTASection />
         <ContactSection />

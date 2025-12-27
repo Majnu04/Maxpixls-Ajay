@@ -11,6 +11,15 @@ export const CONTACT_INFO = {
   youtube: 'https://youtube.com/@maxpixlsphotography?si=ukqlockeDCbux8ns',
 };
 
+export const YOUTUBE_VIDEOS = [
+  { id: 1, videoId: 'GpVU0kSAHwI', title: 'Featured Video' },
+  { id: 2, videoId: '7WBKeWTWwa0', title: 'Featured Video 2' },
+  { id: 3, videoId: 'fscKstSj-sY', title: 'Featured Video 3' },
+  { id: 4, videoId: '6OGYBgyJgtU', title: 'Featured Video 4' },
+  { id: 5, videoId: 'NP93-6LYzZ0', title: 'Featured Video 5' },
+  // Add more video IDs here
+];
+
 export const HERO_IMAGES = [
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg",
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Hero-3.jpg",
