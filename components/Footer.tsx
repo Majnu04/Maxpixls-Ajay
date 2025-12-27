@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, Youtube } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 export const Footer: React.FC = () => {
@@ -22,8 +22,11 @@ export const Footer: React.FC = () => {
           <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
             <Instagram className="w-5 h-5" strokeWidth={1.5} />
           </a>
-          <a href="#" className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
+          <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
             <Facebook className="w-5 h-5" strokeWidth={1.5} />
+          </a>
+          <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
+            <Youtube className="w-5 h-5" strokeWidth={1.5} />
           </a>
           <a href={`https://wa.me/${CONTACT_INFO.phoneNumber}`} target="_blank" rel="noopener noreferrer" className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
             <MessageCircle className="w-5 h-5" strokeWidth={1.5} />

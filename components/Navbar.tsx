@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
             <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">
+            <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">
               <Facebook className="w-5 h-5" />
             </a>
             {/* Mobile Search Icon - Visible only on mobile */}
