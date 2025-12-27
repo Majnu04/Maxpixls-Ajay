@@ -8,6 +8,9 @@ export const FeaturedSection: React.FC = () => {
     ...STORIES.map(s => s.imageUrl)
   ];
   
+  // Duplicate images for seamless infinite scroll
+  const duplicatedImages = [...filmstripImages, ...filmstripImages];
+  
   return (
     <div className="bg-white">
       {/* Thumbnail Gallery - Mobile: 3 grid, Desktop: horizontal filmstrip */}
@@ -23,20 +26,39 @@ export const FeaturedSection: React.FC = () => {
         ))}
       </div>
       
-      {/* Desktop: Horizontal filmstrip */}
-      <div className="hidden md:flex overflow-x-auto gap-2 px-4 py-4 hide-scrollbar">
-        {filmstripImages.map((img, index) => (
-          <div key={index} className="flex-shrink-0 h-32 lg:h-40 overflow-hidden">
-            <img 
-              src={img} 
-              alt={`Gallery ${index + 1}`} 
-              className="h-full w-auto object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
-          </div>
-        ))}
+      {/* Desktop: Horizontal filmstrip with smooth scrolling animation */}
+      <div className="hidden md:block overflow-hidden py-4">
+        <div className="flex gap-2 animate-scroll hover:pause-animation">
+          {duplicatedImages.map((img, index) => (
+            <div key={index} className="flex-shrink-0 h-32 lg:h-40 overflow-hidden">
+              <img 
+                src={img} 
+                alt={`Gallery ${index + 1}`} 
+                className="h-full w-auto object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+              />
+            </div>
+          ))}
+        </div>
       </div>
       
-      <div className="py-12 md:py-20">
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+      
+      <div className="pt-12 pb-6 md:pt-20 md:pb-8">
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <h2 className="font-serif text-2xl md:text-5xl text-gray-900 leading-tight mb-6 md:mb-8">
             Maxpixls Photography & Films - Capturing Your Most Precious Moments

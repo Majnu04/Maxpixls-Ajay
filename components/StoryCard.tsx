@@ -9,11 +9,11 @@ interface StoryCardProps {
 export const StoryCard: React.FC<StoryCardProps> = ({ story }) => {
   return (
     <div className="group cursor-pointer">
-      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 mb-4">
+      <div className="relative overflow-hidden aspect-[4/5] bg-gray-100 mb-4">
         <img 
           src={story.imageUrl} 
           alt={story.title} 
-          className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+          className="w-full h-full object-cover object-top transform transition-transform duration-700 ease-out group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
         

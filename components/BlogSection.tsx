@@ -4,7 +4,7 @@ import { STORIES } from '../constants';
 
 export const BlogSection: React.FC = () => {
   return (
-    <div className="py-16 md:py-24 bg-white scroll-mt-24 md:scroll-mt-32" id="blog">
+    <div className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white scroll-mt-24 md:scroll-mt-32" id="blog">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-20">
           <span className="text-gray-500 font-serif italic text-base md:text-lg tracking-wide">Journal</span>
