@@ -51,7 +51,7 @@ export const HeroSlider: React.FC = () => {
   return (
     <div 
       id="home" 
-      className="relative h-auto md:h-[92vh] w-full overflow-hidden bg-white md:bg-black mt-[60px] md:mt-[100px]"
+      className="relative h-auto md:h-[calc(100vh-100px)] w-full overflow-hidden bg-white md:bg-black mt-[60px] md:mt-[100px]"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -73,31 +73,20 @@ export const HeroSlider: React.FC = () => {
         </div>
       ))}
 
-      {/* Controls - Classic style */}
+      {/* Controls - Minimal arrows */}
       <button 
         onClick={() => { setIsAutoPlaying(false); prevSlide(); }}
-        className="hidden md:block absolute left-6 top-1/2 -translate-y-1/2 p-4 bg-white/20 hover:bg-white/40 backdrop-blur-lg rounded-full text-white transition-all transform hover:scale-110 border border-white/30"
+        className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-10 h-10" strokeWidth={1} />
       </button>
 
       <button 
         onClick={() => { setIsAutoPlaying(false); nextSlide(); }}
-        className="hidden md:block absolute right-6 top-1/2 -translate-y-1/2 p-4 bg-white/20 hover:bg-white/40 backdrop-blur-lg rounded-full text-white transition-all transform hover:scale-110 border border-white/30"
+        className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-10 h-10" strokeWidth={1} />
       </button>
-
-      {/* Indicators - Classic dots - Desktop only */}
-      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 space-x-3">
-        {HERO_IMAGES.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => { setIsAutoPlaying(false); setCurrentSlide(index); }}
-            className={`rounded-full transition-all duration-500 ${index === currentSlide ? 'bg-white w-12 h-2' : 'bg-white/70 w-2 h-2 hover:bg-white/90'}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };
