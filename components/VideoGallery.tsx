@@ -4,8 +4,13 @@ import { YOUTUBE_VIDEOS } from '../constants';
 
 export const VideoGallery = () => {
   const [showAll, setShowAll] = useState(false);
+  const [playingVideos, setPlayingVideos] = useState<Set<number>>(new Set([0])); // Autoplay featured video
   const featuredVideo = YOUTUBE_VIDEOS[0];
   const remainingVideos = YOUTUBE_VIDEOS.slice(1);
+
+  const handlePlayVideo = (videoId: number) => {
+    setPlayingVideos(prev => new Set(prev).add(videoId));
+  };
 
   return (
     <section className="py-16 px-4 bg-gray-50">
@@ -16,20 +21,36 @@ export const VideoGallery = () => {
           <p className="text-gray-600 text-lg">Experience the magic through our cinematic storytelling</p>
         </div>
 
-        {/* Featured Video - Auto-play */}
+        {/* Featured Video */}
         <div className="max-w-4xl mx-auto mb-8">
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${featuredVideo.videoId}?autoplay=1&mute=1&loop=1&playlist=${featuredVideo.videoId}&controls=1&modestbranding=1&rel=0`}
-              title={featuredVideo.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            ></iframe>
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-black">
+            {playingVideos.has(0) ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${featuredVideo.videoId}?autoplay=1&mute=1&loop=1&playlist=${featuredVideo.videoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=1&iv_load_policy=3&disablekb=1`}
+                title={featuredVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            ) : (
+              <>
+                <img
+                  src={`https://img.youtube.com/vi/${featuredVideo.videoId}/maxresdefault.jpg`}
+                  alt={featuredVideo.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center group cursor-pointer hover:bg-black/40 transition-colors"
+                     onClick={() => handlePlayVideo(0)}>
+                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all">
+                    <Play className="w-10 h-10 text-gray-900 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -37,18 +58,34 @@ export const VideoGallery = () => {
         {showAll && remainingVideos.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {remainingVideos.map((video) => (
-              <div key={video.id} className="group relative aspect-video rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${video.videoId}?controls=1&modestbranding=1&rel=0`}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                ></iframe>
+              <div key={video.id} className="group relative aspect-video rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-black">
+                {playingVideos.has(video.id) ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=1&iv_load_policy=3&disablekb=1`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
+                ) : (
+                  <>
+                    <img
+                      src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+                      alt={video.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer hover:bg-black/40 transition-colors"
+                         onClick={() => handlePlayVideo(video.id)}>
+                      <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all">
+                        <Play className="w-8 h-8 text-gray-900 ml-1" fill="currentColor" />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>
