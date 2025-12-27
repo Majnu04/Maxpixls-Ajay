@@ -9,13 +9,17 @@ import {
   ContactSection,
   Footer,
   WhatsAppButton,
-  VideoGallery
+  VideoGallery,
+  TermsModal,
+  PrivacyModal
 } from './components';
 
 // --- Main App ---
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -31,6 +35,8 @@ export default function App() {
       <Navbar onMenuToggle={() => setIsMenuOpen(true)} />
       <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <WhatsAppButton />
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
       
       <main>
         <HeroSlider />
@@ -41,7 +47,10 @@ export default function App() {
         <ContactSection />
       </main>
       
-      <Footer />
+      <Footer 
+        onTermsClick={() => setIsTermsOpen(true)}
+        onPrivacyClick={() => setIsPrivacyOpen(true)}
+      />
     </div>
   );
 }

@@ -9,3 +9,5 @@ export { ContactSection } from './ContactSection';
 export { Footer } from './Footer';
 export { WhatsAppButton } from './WhatsAppButton';
 export { VideoGallery } from './VideoGallery';
+export { TermsModal } from './TermsModal';
+export { PrivacyModal } from './PrivacyModal';

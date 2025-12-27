@@ -2,7 +2,12 @@ import React from 'react';
 import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, Youtube } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onTermsClick: () => void;
+  onPrivacyClick: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onTermsClick, onPrivacyClick }) => {
   return (
     <footer className="bg-[#F5EFE7] pt-12 md:pt-16 pb-6 border-t border-gray-100">
       <div className="container mx-auto px-6">
@@ -51,6 +56,21 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-100 pt-6 text-center">
+          <div className="flex justify-center gap-4 mb-3">
+            <button 
+              onClick={onTermsClick}
+              className="text-xs font-medium text-gray-500 hover:text-brand-gold transition-colors underline"
+            >
+              Terms & Conditions
+            </button>
+            <span className="text-xs text-gray-300">|</span>
+            <button 
+              onClick={onPrivacyClick}
+              className="text-xs font-medium text-gray-500 hover:text-brand-gold transition-colors underline"
+            >
+              Privacy Policy
+            </button>
+          </div>
           <p className="text-xs font-medium text-gray-400 mb-1">Made with love, in India</p>
           <p className="text-xs font-medium text-gray-400 mb-1">&copy; {new Date().getFullYear()} MAXPIXLS Photography. All rights reserved.</p>
           <p className="text-xs font-medium text-gray-400">
