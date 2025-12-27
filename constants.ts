@@ -44,7 +44,7 @@ export const PRESS_LOGOS: PressFeature[] = [
 export const STORIES: Story[] = [
   { id: 1, title: "Little Angel's First Smile", category: "Baby Shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg" },
   { id: 2, title: "Dream Wedding at Palace Grounds", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/dream-wedding.jpg" },
-  { id: 3, title: "Destination Wedding in Jaipur", category: "Destination Weddings", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.12%20PM%20(1).jpeg" },
+  { id: 3, title: "Destination Wedding ", category: "Destination Weddings", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.12%20PM%20(1).jpeg" },
   { id: 4, title: "Romantic Pre-Wedding Shoot", category: "Pre & Post Wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Pre-wedding.jpg" },
   { id: 5, title: "Traditional Wedding Ceremony", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM%20(1).jpeg" },
   { id: 6, title: "Elegant Bridal Portraits", category: "Fashion Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Fashion.JPG" },
