@@ -13,7 +13,6 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose 
     { label: 'Home', href: '#home', highlight: true, isRoute: false },
     { label: 'Blog', href: '#blog', isRoute: false },
     { label: 'Book us now :)', href: '#book', isRoute: false },
-    { label: 'Portrait Shoots', href: '#fashion', isRoute: false },
     { label: 'Stories for brands', href: '/stories', isRoute: true },
   ];
 
