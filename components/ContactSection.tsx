@@ -9,21 +9,51 @@ export const ContactSection: React.FC = () => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 1500);
+    setErrorMessage('');
+
+    // Check if Formspree is configured
+    if (CONTACT_INFO.formspreeEndpoint === 'YOUR_FORM_ID') {
+      setStatus('error');
+      setErrorMessage('Form service not configured. Please set up Formspree endpoint in constants.ts');
+      return;
+    }
+
+    try {
+      // Send form data to Formspree
+      const response = await fetch(`https://formspree.io/f/${CONTACT_INFO.formspreeEndpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Formspree Error:', error);
+      setStatus('error');
+      setErrorMessage('Failed to send message. Please try again or contact us via WhatsApp.');
+    }
   };
 
   return (
@@ -58,6 +88,17 @@ export const ContactSection: React.FC = () => {
               className="text-xs font-bold uppercase tracking-widest text-gray-900 border-b border-gray-900 pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors"
             >
               Send another message
+            </button>
+          </div>
+        ) : status === 'error' ? (
+          <div className="bg-red-50 border border-red-100 p-8 text-center rounded-sm">
+            <h3 className="font-serif text-2xl text-red-800 mb-2">Error</h3>
+            <p className="font-sans text-red-700 mb-6">{errorMessage}</p>
+            <button 
+              onClick={() => setStatus('idle')}
+              className="text-xs font-bold uppercase tracking-widest text-gray-900 border-b border-gray-900 pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors"
+            >
+              Try again
             </button>
           </div>
         ) : (

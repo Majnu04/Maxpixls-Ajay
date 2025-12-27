@@ -9,6 +9,8 @@ export const CONTACT_INFO = {
   instagram: 'https://www.instagram.com/maxpixls?igsh=MWkybXlqY3VzcnN1MQ==',
   facebook: 'https://www.facebook.com/share/1BqHoN12ed/',
   youtube: 'https://youtube.com/@maxpixlsphotography?si=ukqlockeDCbux8ns',
+  // Formspree Configuration - Get your form ID from https://formspree.io/
+  formspreeEndpoint: 'xzdbrgqn',
 };
 
 export const YOUTUBE_VIDEOS = [
