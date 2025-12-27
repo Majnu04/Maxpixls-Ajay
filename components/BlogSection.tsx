@@ -19,7 +19,7 @@ export const BlogSection: React.FC = () => {
         
         <div className="text-center mt-14 md:mt-24">
             <a 
-              href="#contact" 
+              href="/stories" 
               className="inline-block border-2 border-gray-900 text-gray-900 px-10 py-4 md:px-14 md:py-5 font-sans text-xs md:text-sm font-medium uppercase tracking-widest hover:bg-gray-900 hover:text-white transition-all duration-300"
             >
                 View All Stories

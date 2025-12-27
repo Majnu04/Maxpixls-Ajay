@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   Navbar,
   FullScreenMenu,
@@ -11,10 +12,57 @@ import {
   WhatsAppButton,
   VideoGallery,
   TermsModal,
-  PrivacyModal
+  PrivacyModal,
+  AllStoriesPage
 } from './components';
 
 // --- Main App ---
+
+function HomePage({ 
+  onMenuToggle, 
+  onTermsClick, 
+  onPrivacyClick 
+}: { 
+  onMenuToggle: () => void;
+  onTermsClick: () => void;
+  onPrivacyClick: () => void;
+}) {
+  return (
+    <>
+      <main>
+        <HeroSlider />
+        <FeaturedSection />
+        <VideoGallery />
+        <BlogSection />
+        <CTASection />
+        <ContactSection />
+      </main>
+      
+      <Footer 
+        onTermsClick={onTermsClick}
+        onPrivacyClick={onPrivacyClick}
+      />
+    </>
+  );
+}
+
+function StoriesPage({ 
+  onTermsClick, 
+  onPrivacyClick 
+}: { 
+  onTermsClick: () => void;
+  onPrivacyClick: () => void;
+}) {
+  return (
+    <>
+      <AllStoriesPage />
+      <Footer 
+        onTermsClick={onTermsClick}
+        onPrivacyClick={onPrivacyClick}
+      />
+    </>
+  );
+}
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,26 +79,36 @@ export default function App() {
   }, [isMenuOpen]);
 
   return (
-    <div className="bg-white min-h-screen">
-      <Navbar onMenuToggle={() => setIsMenuOpen(true)} />
-      <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      <WhatsAppButton />
-      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
-      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
-      
-      <main>
-        <HeroSlider />
-        <FeaturedSection />
-        <VideoGallery />
-        <BlogSection />
-        <CTASection />
-        <ContactSection />
-      </main>
-      
-      <Footer 
-        onTermsClick={() => setIsTermsOpen(true)}
-        onPrivacyClick={() => setIsPrivacyOpen(true)}
-      />
-    </div>
+    <Router>
+      <div className="bg-white min-h-screen">
+        <Navbar onMenuToggle={() => setIsMenuOpen(true)} />
+        <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+        <WhatsAppButton />
+        <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+        <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+        
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                onMenuToggle={() => setIsMenuOpen(true)}
+                onTermsClick={() => setIsTermsOpen(true)}
+                onPrivacyClick={() => setIsPrivacyOpen(true)}
+              />
+            } 
+          />
+          <Route 
+            path="/stories" 
+            element={
+              <StoriesPage 
+                onTermsClick={() => setIsTermsOpen(true)}
+                onPrivacyClick={() => setIsPrivacyOpen(true)}
+              />
+            } 
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }

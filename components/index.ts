@@ -11,3 +11,4 @@ export { WhatsAppButton } from './WhatsAppButton';
 export { VideoGallery } from './VideoGallery';
 export { TermsModal } from './TermsModal';
 export { PrivacyModal } from './PrivacyModal';
+export { AllStoriesPage } from './AllStoriesPage';
