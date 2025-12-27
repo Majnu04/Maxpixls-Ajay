@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { StoryCard } from './StoryCard';
-import { STORIES } from '../constants';
+import { STORIES, SERVICES } from '../constants';
 
 export const AllStoriesPage: React.FC = () => {
   useEffect(() => {
@@ -16,8 +16,8 @@ export const AllStoriesPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {STORIES.map((story) => (
-            <StoryCard key={story.id} story={story} />
+          {SERVICES.map((service) => (
+            <StoryCard key={service.id} story={service} />
           ))}
         </div>
 

@@ -46,24 +46,23 @@ export const STORIES: Story[] = [
   { id: 2, title: "Dream Wedding ", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
   { id: 3, title: "Destination Wedding ", category: "Destination Weddings", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
   { id: 4, title: "Romantic Pre-Wedding Shoot", category: "Pre & Post Wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Pre-wedding.jpg" },
-  { id: 5, title: "Traditional Wedding Ceremony", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM%20(1).jpeg" },
+  { id: 5, title: "Traditional Wedding Ceremony", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
   { id: 6, title: "Elegant Bridal Portraits", category: "Fashion Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Fashion.JPG" },
 ];
 
 export const SERVICES: Service[] = [
-  { id: 1, title: "Halfsare Portraits", description: "Halfsare Candid Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/halfsare.jpg" },
-  { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/bride-groom.jpg" },
-  { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/couple-poses.jpg" },
-  { id: 4, title: "Wedding Candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/wedding-candids.jpg" },
-  { id: 5, title: "Wedding Jewellery - candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/jewellery.jpg" },
-  { id: 6, title: "Maternity photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/maternity.jpg" },
-  { id: 7, title: "Bride Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/bride.jpg" },
-  { id: 8, title: "Model & Fashion photography", description: "Portfolio, Fashion & Model shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/fashion.jpg" },
-  { id: 9, title: "Pre wedding candid Song & Film 4k", description: "Maxpixlsphotography & Films candid", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/prewedding-film.jpg" },
-  { id: 10, title: "Wedding's", description: "Maxpixlsphotography & Films wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/weddings.jpg" },
-  { id: 11, title: "Baby shoot", description: "Baby shoots / Birthday & outdoor shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/baby.jpg" },
-  { id: 12, title: "Pre wedding's", description: "Pre & post wedding's & cover song 4k", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/prewedding.jpg" },
-  { id: 13, title: "Wedding photography & Film Services", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/services/wedding-film.jpg" },
+  { id: 1, title: "Halfsare Portraits", description: "Halfsare Candid Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM%20(1).jpeg" },
+  { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
+  { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
+  { id: 4, title: "Wedding Candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
+  { id: 5, title: "Wedding Jewellery - candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Fashion.JPG" },
+  { id: 6, title: "Maternity photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-1.jpg" },
+  { id: 7, title: "Bride Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-6.jpg" },
+  { id: 8, title: "Model & Fashion photography", description: "Portfolio, Fashion & Model shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/fashion-port.jpg" },
+  { id: 10, title: "Wedding's", description: "Maxpixlsphotography & Films wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
+  { id: 11, title: "Baby shoot", description: "Baby shoots / Birthday & outdoor shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg" },
+  { id: 12, title: "Pre wedding's", description: "Pre & post wedding's & cover song 4k", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Pre-wedding.jpg" },
+  { id: 13, title: "Wedding photography & Film Services", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-4.jpg" },
 ];
 
 export const NAV_ITEMS: NavItem[] = [
