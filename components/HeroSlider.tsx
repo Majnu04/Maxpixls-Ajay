@@ -51,7 +51,7 @@ export const HeroSlider: React.FC = () => {
   return (
     <div 
       id="home" 
-      className="relative h-[60vh] md:h-[85vh] w-full overflow-hidden bg-gray-100 mt-[75px] md:mt-[100px] scroll-mt-24 md:scroll-mt-32"
+      className="relative h-auto md:h-[92vh] w-full overflow-hidden bg-white md:bg-black mt-[60px] md:mt-[100px]"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -59,40 +59,42 @@ export const HeroSlider: React.FC = () => {
       {HERO_IMAGES.map((img, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+          className={`relative md:absolute md:inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100 block' : 'opacity-0 scale-105 hidden md:block'}`}
         >
-          <img 
-            src={img} 
-            alt={`Slide ${index + 1}`} 
-            className="w-full h-full object-cover"
-          />
-          {/* Subtle overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
+          <div className="w-full h-full">
+            <img 
+              src={img} 
+              alt={`Slide ${index + 1}`} 
+              className="w-full h-auto md:h-full object-contain md:object-cover"
+            />
+          </div>
+          {/* Classic elegant overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
         </div>
       ))}
 
-      {/* Controls - Hidden on very small screens, shown on md+ or if preferred to always show */}
+      {/* Controls - Classic style */}
       <button 
         onClick={() => { setIsAutoPlaying(false); prevSlide(); }}
-        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/30 backdrop-blur-md rounded-full text-white transition-all transform hover:scale-110"
+        className="hidden md:block absolute left-6 top-1/2 -translate-y-1/2 p-4 bg-white/20 hover:bg-white/40 backdrop-blur-lg rounded-full text-white transition-all transform hover:scale-110 border border-white/30"
       >
-        <ChevronLeft className="w-8 h-8" />
+        <ChevronLeft className="w-6 h-6" />
       </button>
 
       <button 
         onClick={() => { setIsAutoPlaying(false); nextSlide(); }}
-        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/30 backdrop-blur-md rounded-full text-white transition-all transform hover:scale-110"
+        className="hidden md:block absolute right-6 top-1/2 -translate-y-1/2 p-4 bg-white/20 hover:bg-white/40 backdrop-blur-lg rounded-full text-white transition-all transform hover:scale-110 border border-white/30"
       >
-        <ChevronRight className="w-8 h-8" />
+        <ChevronRight className="w-6 h-6" />
       </button>
 
-      {/* Indicators */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
+      {/* Indicators - Classic dots - Desktop only */}
+      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 space-x-3">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
             onClick={() => { setIsAutoPlaying(false); setCurrentSlide(index); }}
-            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-6 md:w-8' : 'bg-white/50 w-1.5 md:w-2'}`}
+            className={`rounded-full transition-all duration-500 ${index === currentSlide ? 'bg-white w-12 h-2' : 'bg-white/70 w-2 h-2 hover:bg-white/90'}`}
           />
         ))}
       </div>
