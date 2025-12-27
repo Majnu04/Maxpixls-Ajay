@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
   { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
   { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
   { id: 4, title: "Wedding Candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
-  { id: 5, title: "Wedding Jewellery - candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Fashion.JPG" },
+  { id: 5, title: "Wedding Jewellery - candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/jewellary.jpeg" },
   { id: 6, title: "Maternity photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/metenitry.jpeg" },
   { id: 7, title: "Bride Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/bride-pose.jpeg" },
   { id: 8, title: "Model & Fashion photography", description: "Portfolio, Fashion & Model shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/fashion-port.jpg" },
