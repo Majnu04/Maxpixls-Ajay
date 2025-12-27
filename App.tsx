@@ -7,7 +7,8 @@ import {
   BlogSection,
   CTASection,
   ContactSection,
-  Footer
+  Footer,
+  WhatsAppButton
 } from './components';
 
 // --- Main App ---
@@ -28,6 +29,7 @@ export default function App() {
     <div className="bg-white min-h-screen">
       <Navbar onMenuToggle={() => setIsMenuOpen(true)} />
       <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <WhatsAppButton />
       
       <main>
         <HeroSlider />

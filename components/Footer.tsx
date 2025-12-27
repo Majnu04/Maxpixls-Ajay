@@ -1,40 +1,55 @@
 import React from 'react';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { CONTACT_INFO } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white pt-12 md:pt-20 pb-10 border-t border-gray-100">
-      <div className="container mx-auto px-6 text-center">
+    <footer className="bg-white pt-12 md:pt-16 pb-6 border-t border-gray-100">
+      <div className="container mx-auto px-6">
         
-        {/* Logo */}
-        <div className="mb-8 md:mb-10">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-gray-900">MAXPIXLS</h2>
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-gray-500">Photography & Films by AjayBevara</span>
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 md:mb-10">
+          <a href="#home" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Home</a>
+          <a href="#weddings" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Weddings</a>
+          <a href="#blog" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Portfolio</a>
+          <a href="#fashion" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Fashion</a>
+          <a href="#events" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Events</a>
+          <a href="#book" className="font-sans text-xs uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Contact</a>
         </div>
 
-        {/* Links */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 md:mb-12 font-sans text-xs md:text-sm uppercase tracking-widest text-gray-600">
-          <a href="#home" className="hover:text-brand-gold transition-colors">Home</a>
-          <a href="#weddings" className="hover:text-brand-gold transition-colors">Weddings</a>
-          <a href="#blog" className="hover:text-brand-gold transition-colors">Portfolio</a>
-          <a href="#fashion" className="hover:text-brand-gold transition-colors">Fashion</a>
-          <a href="#events" className="hover:text-brand-gold transition-colors">Events</a>
-          <a href="#book" className="hover:text-brand-gold transition-colors">Contact</a>
+        {/* Social Icons */}
+        <div className="flex justify-center gap-3 mb-8 md:mb-10">
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
+            <Instagram className="w-4 h-4" strokeWidth={1.5} />
+          </a>
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
+            <Facebook className="w-4 h-4" strokeWidth={1.5} />
+          </a>
+          <a href={`https://wa.me/${CONTACT_INFO.phoneNumber}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:border-gray-900 text-gray-600 hover:text-gray-900 transition-all">
+            <MessageCircle className="w-4 h-4" strokeWidth={1.5} />
+          </a>
         </div>
 
-        {/* Social */}
-        <div className="flex justify-center gap-6 mb-8 md:mb-12">
-            <a href="#" className="p-3 bg-gray-50 rounded-full hover:bg-gray-100 transition-colors text-gray-900">
-                <Instagram className="w-5 h-5" />
-            </a>
-            <a href="#" className="p-3 bg-gray-50 rounded-full hover:bg-gray-100 transition-colors text-gray-900">
-                <Facebook className="w-5 h-5" />
-            </a>
+        {/* Contact Information */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8 md:mb-10 text-center">
+          <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-2 text-xs text-gray-600 hover:text-brand-gold transition-colors">
+            <Mail className="w-4 h-4" strokeWidth={1.5} />
+            {CONTACT_INFO.email}
+          </a>
+          <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-2 text-xs text-gray-600 hover:text-brand-gold transition-colors">
+            <Phone className="w-4 h-4" strokeWidth={1.5} />
+            {CONTACT_INFO.phone}
+          </a>
+          <a href={CONTACT_INFO.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-gray-600 hover:text-brand-gold transition-colors">
+            <MapPin className="w-4 h-4" strokeWidth={1.5} />
+            {CONTACT_INFO.address}
+          </a>
         </div>
 
-        <div className="text-gray-400 text-[10px] md:text-xs font-sans">
-            <p className="mb-2">Made with love, in India</p>
-            <p>&copy; {new Date().getFullYear()} MAXPIXLS Photography. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-100 pt-6 text-center">
+          <p className="text-[10px] text-gray-400 mb-1">Made with love, in India</p>
+          <p className="text-[10px] text-gray-400">&copy; {new Date().getFullYear()} MAXPIXLS Photography. All rights reserved.</p>
         </div>
       </div>
     </footer>

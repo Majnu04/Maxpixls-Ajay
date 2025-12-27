@@ -7,3 +7,4 @@ export { BlogSection } from './BlogSection';
 export { CTASection } from './CTASection';
 export { ContactSection } from './ContactSection';
 export { Footer } from './Footer';
+export { WhatsAppButton } from './WhatsAppButton';

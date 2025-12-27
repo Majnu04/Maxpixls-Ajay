@@ -1,5 +1,13 @@
 import { Story, PressFeature, NavItem } from './types';
 
+export const CONTACT_INFO = {
+  email: 'maxpixlsphotography@gmail.com',
+  phone: '+91 99899 65562',
+  phoneNumber: '919989965562', // Format for WhatsApp
+  address: 'Jarajapupeta, Andhra Pradesh',
+  mapUrl: 'https://www.google.com/maps/place/5CJP%2B4WJ,+Jarajapupeta,+Andhra+Pradesh/@18.3549038,83.2910942,10.14z/data=!4m5!3m4!1s0x3a3bf1c9a05ec3b9:0x5c27f3a4086a106d!8m2!3d18.1803375!4d83.4372656?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
+};
+
 export const HERO_IMAGES = [
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg",
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Hero-3.jpg",
