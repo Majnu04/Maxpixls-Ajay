@@ -51,7 +51,7 @@ export const HeroSlider: React.FC = () => {
   return (
     <div 
       id="home" 
-      className="relative h-auto md:h-[calc(100vh-100px)] w-full overflow-hidden bg-white mt-[60px] md:mt-[100px]"
+      className="relative h-auto md:h-[calc(100vh-100px)] w-full overflow-hidden bg-white mt-[60px] md:mt-[100px] md:px-8 lg:px-12"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -59,7 +59,7 @@ export const HeroSlider: React.FC = () => {
       {HERO_IMAGES.map((img, index) => (
         <div
           key={index}
-          className={`relative md:absolute md:inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100 block' : 'opacity-0 scale-105 hidden md:block'}`}
+          className={`relative md:absolute md:inset-0 md:left-8 md:right-8 lg:left-12 lg:right-12 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100 block' : 'opacity-0 scale-105 hidden md:block'}`}
         >
           <div className="w-full h-full">
             <img 
