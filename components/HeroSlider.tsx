@@ -65,7 +65,7 @@ export const HeroSlider: React.FC = () => {
             <img 
               src={img} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-auto md:h-full object-contain md:object-cover"
+              className="w-full h-auto md:h-full object-contain md:object-cover md:object-top"
             />
           </div>
           {/* Classic elegant overlay */}
