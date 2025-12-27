@@ -76,16 +76,16 @@ export const HeroSlider: React.FC = () => {
       {/* Controls - Minimal arrows */}
       <button 
         onClick={() => { setIsAutoPlaying(false); prevSlide(); }}
-        className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-gray-600 md:text-white/80 hover:text-gray-900 md:hover:text-white transition-all"
       >
-        <ChevronLeft className="w-10 h-10" strokeWidth={1} />
+        <ChevronLeft className="w-8 h-8 md:w-10 md:h-10" strokeWidth={1} />
       </button>
 
       <button 
         onClick={() => { setIsAutoPlaying(false); nextSlide(); }}
-        className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-gray-600 md:text-white/80 hover:text-gray-900 md:hover:text-white transition-all"
       >
-        <ChevronRight className="w-10 h-10" strokeWidth={1} />
+        <ChevronRight className="w-8 h-8 md:w-10 md:h-10" strokeWidth={1} />
       </button>
     </div>
   );

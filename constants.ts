@@ -16,12 +16,12 @@ export const PRESS_LOGOS: PressFeature[] = [
 ];
 
 export const STORIES: Story[] = [
-  { id: 1, title: "Dream Wedding at Palace Grounds", category: "Wedding Photography", imageUrl: "https://picsum.photos/id/1059/800/600" },
-  { id: 2, title: "Destination Wedding in Jaipur", category: "Destination Weddings", imageUrl: "https://picsum.photos/id/106/800/600" },
-  { id: 3, title: "Little Angel's First Smile", category: "Baby Shoots", imageUrl: "https://picsum.photos/id/342/800/600" },
-  { id: 4, title: "Fashion Editorial Elegance", category: "Fashion Portraits", imageUrl: "https://picsum.photos/id/453/800/600" },
-  { id: 5, title: "Grand Corporate Gala", category: "Event Photography", imageUrl: "https://picsum.photos/id/64/800/600" },
-  { id: 6, title: "Pre-Wedding Romance in Udaipur", category: "Pre & Post Wedding", imageUrl: "https://picsum.photos/id/838/800/600" },
+  { id: 1, title: "Dream Wedding at Palace Grounds", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.26%20PM%20(1).jpeg" },
+  { id: 2, title: "Destination Wedding in Jaipur", category: "Destination Weddings", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.12%20PM%20(1).jpeg" },
+  { id: 3, title: "Romantic Pre-Wedding Shoot", category: "Pre & Post Wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.12%20PM.jpeg" },
+  { id: 4, title: "Traditional Wedding Ceremony", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM%20(1).jpeg" },
+  { id: 5, title: "Grand Wedding Celebration", category: "Event Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM.jpeg" },
+  { id: 6, title: "Elegant Bridal Portraits", category: "Fashion Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.14%20PM%20(1).jpeg" },
 ];
 
 export const NAV_ITEMS: NavItem[] = [
