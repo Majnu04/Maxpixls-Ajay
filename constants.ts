@@ -1,6 +1,7 @@
 import { Story, PressFeature, NavItem } from './types';
 
 export const HERO_IMAGES = [
+  "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg",
   "/Hero/WhatsApp Image 2025-12-27 at 7.38.23 PM (2).jpeg",
   "/Hero/WhatsApp Image 2025-12-27 at 7.38.26 PM (1).jpeg",
   "/Hero/WhatsApp Image 2025-12-27 at 7.38.27 PM (1).jpeg",
