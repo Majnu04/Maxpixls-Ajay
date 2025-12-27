@@ -13,24 +13,11 @@ export const FeaturedSection: React.FC = () => {
   
   return (
     <div className="bg-white">
-      {/* Thumbnail Gallery - Mobile: 3 grid, Desktop: horizontal filmstrip */}
-      <div className="md:hidden grid grid-cols-3 gap-1">
-        {HERO_IMAGES.slice(1, 4).map((img, index) => (
-          <div key={index} className="aspect-square overflow-hidden">
-            <img 
-              src={img} 
-              alt={`Gallery ${index + 1}`} 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-      
-      {/* Desktop: Horizontal filmstrip with smooth scrolling animation */}
-      <div className="hidden md:block overflow-hidden py-4">
-        <div className="flex gap-2 animate-scroll hover:pause-animation">
+      {/* Thumbnail Gallery - Horizontal filmstrip with smooth scrolling animation for all screens */}
+      <div className="overflow-hidden py-2 md:py-4">
+        <div className="flex gap-1 md:gap-2 animate-scroll hover:pause-animation">
           {duplicatedImages.map((img, index) => (
-            <div key={index} className="flex-shrink-0 h-32 lg:h-40 overflow-hidden">
+            <div key={index} className="flex-shrink-0 h-20 md:h-32 lg:h-40 overflow-hidden">
               <img 
                 src={img} 
                 alt={`Gallery ${index + 1}`} 
