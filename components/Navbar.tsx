@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Search, Instagram, Facebook, X } from 'lucide-react';
+import { CONTACT_INFO } from '../constants';
 
 interface NavbarProps {
   onMenuToggle: () => void;
@@ -65,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
             >
               <Search className="w-5 h-5 text-gray-800" />
             </button>
-            <a href="#" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">
+            <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
             <a href="#" className="hidden md:block text-gray-800 hover:text-brand-gold transition-colors">

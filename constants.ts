@@ -6,6 +6,7 @@ export const CONTACT_INFO = {
   phoneNumber: '919989965562', // Format for WhatsApp
   address: 'Jarajapupeta, Andhra Pradesh',
   mapUrl: 'https://www.google.com/maps/place/5CJP%2B4WJ,+Jarajapupeta,+Andhra+Pradesh/@18.3549038,83.2910942,10.14z/data=!4m5!3m4!1s0x3a3bf1c9a05ec3b9:0x5c27f3a4086a106d!8m2!3d18.1803375!4d83.4372656?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
+  instagram: 'https://www.instagram.com/maxpixls?igsh=MWkybXlqY3VzcnN1MQ==',
 };
 
 export const HERO_IMAGES = [
