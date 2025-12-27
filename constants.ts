@@ -51,7 +51,7 @@ export const STORIES: Story[] = [
 ];
 
 export const SERVICES: Service[] = [
-  { id: 1, title: "Halfsare Portraits", description: "Halfsare Candid Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/WhatsApp%20Image%202025-12-27%20at%207.38.13%20PM%20(1).jpeg" },
+  { id: 1, title: "Halfsare Portraits", description: "Halfsare Candid Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/half-saree.jpg" },
   { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
   { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
   { id: 4, title: "Wedding Candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
