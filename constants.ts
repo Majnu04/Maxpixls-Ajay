@@ -14,9 +14,12 @@ export const CONTACT_INFO = {
 export const HERO_IMAGES = [
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg",
   "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Hero-3.jpg",
-
+  "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-1.jpg",
+  "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-6.jpg",
+  "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-5.JPG",
+  "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-4.jpg",
   "/Hero/WhatsApp Image 2025-12-27 at 7.38.27 PM (1).jpeg",
-  "/Hero/WhatsApp Image 2025-12-27 at 7.38.27 PM.jpeg",
+  
 ];
 
 export const PRESS_LOGOS: PressFeature[] = [

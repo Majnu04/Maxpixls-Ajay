@@ -51,7 +51,7 @@ export const HeroSlider: React.FC = () => {
   return (
     <div 
       id="home" 
-      className="relative h-auto md:h-[calc(100vh-100px)] w-full overflow-hidden bg-white md:bg-black mt-[60px] md:mt-[100px]"
+      className="relative h-auto md:h-[calc(100vh-100px)] w-full overflow-hidden bg-white mt-[60px] md:mt-[100px]"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -65,7 +65,7 @@ export const HeroSlider: React.FC = () => {
             <img 
               src={img} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-auto md:h-full object-contain md:object-cover md:object-center"
+              className="w-full h-auto md:h-full md:w-full object-contain md:object-cover"
             />
           </div>
           {/* Classic elegant overlay */}

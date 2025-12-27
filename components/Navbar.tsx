@@ -48,14 +48,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
           </button>
 
           {/* Center: Logo */}
-          <div className="flex flex-col items-center cursor-pointer">
-            <h1 className="font-serif text-2xl md:text-4xl font-bold tracking-tight text-brand-black">
-              MAXPIXLS
-            </h1>
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-gray-500 mt-1">
+          <a href="#home" className="flex flex-col items-center cursor-pointer">
+            <img 
+              src="/logo12.png" 
+              alt="MAXPIXLS Photography" 
+              className="h-10 md:h-14 w-auto object-contain"
+              style={{ filter: 'brightness(0) saturate(100%)' }}
+            />
+            <span className="text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-gray-500 mt-0.5">
               by AjayBevara
             </span>
-          </div>
+          </a>
 
           {/* Right: Icons */}
           <div className="flex items-center gap-4">
@@ -87,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
       {/* Search Overlay */}
       {isSearchOpen && (
         <div 
-          className="fixed inset-0 z-[70] bg-white animate-fadeIn"
+          className="fixed inset-0 z-[70] bg-white"
         >
           <div className="absolute top-6 right-6 z-10">
             <button 
@@ -135,7 +138,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
                       key={term}
                       onClick={() => {
                         setSearchQuery(term);
-                        handleSearchSubmit(new Event('submit') as any);
                       }}
                       className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs md:text-sm font-sans rounded-full transition-colors"
                     >
