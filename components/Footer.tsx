@@ -16,8 +16,6 @@ export const Footer: React.FC<FooterProps> = ({ onTermsClick, onPrivacyClick }) 
         <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 md:mb-10">
           <a href="#home" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Home</a>
           <a href="#weddings" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Weddings</a>
-          <a href="#blog" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Portfolio</a>
-          <a href="#fashion" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Fashion</a>
           <a href="#events" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Events</a>
           <a href="#book" className="font-sans text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-gold transition-colors">Contact</a>
         </div>
