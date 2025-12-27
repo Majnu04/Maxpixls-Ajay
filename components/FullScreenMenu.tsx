@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Instagram, Facebook, Youtube, MessageCircle } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
+import { Link } from 'react-router-dom';
 
 interface FullScreenMenuProps {
   isOpen: boolean;
@@ -9,11 +10,11 @@ interface FullScreenMenuProps {
 
 export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
   const menuItems = [
-    { label: 'Home', href: '#home', highlight: true },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Book us now :)', href: '#book' },
-    { label: 'Portrait Shoots', href: '#fashion' },
-    { label: 'Stories for brands', href: '#weddings' },
+    { label: 'Home', href: '#home', highlight: true, isRoute: false },
+    { label: 'Blog', href: '#blog', isRoute: false },
+    { label: 'Book us now :)', href: '#book', isRoute: false },
+    { label: 'Portrait Shoots', href: '#fashion', isRoute: false },
+    { label: 'Stories for brands', href: '/stories', isRoute: true },
   ];
 
   return (
@@ -29,18 +30,33 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose 
       <div className="h-full flex flex-col items-center justify-center px-4">
         <div className="space-y-6 md:space-y-8 mb-12">
           {menuItems.map((item, index) => (
-            <a 
-              key={index} 
-              href={item.href} 
-              onClick={onClose}
-              className={`block font-serif text-3xl md:text-4xl text-center transition-colors duration-300 cursor-pointer ${
-                item.highlight 
-                  ? 'text-[#FF6B6B] hover:opacity-80' 
-                  : 'text-gray-800 hover:text-[#FF6B6B]'
-              }`}
-            >
-              {item.label}
-            </a>
+            item.isRoute ? (
+              <Link 
+                key={index} 
+                to={item.href} 
+                onClick={onClose}
+                className={`block font-serif text-3xl md:text-4xl text-center transition-colors duration-300 cursor-pointer ${
+                  item.highlight 
+                    ? 'text-[#FF6B6B] hover:opacity-80' 
+                    : 'text-gray-800 hover:text-[#FF6B6B]'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a 
+                key={index} 
+                href={item.href} 
+                onClick={onClose}
+                className={`block font-serif text-3xl md:text-4xl text-center transition-colors duration-300 cursor-pointer ${
+                  item.highlight 
+                    ? 'text-[#FF6B6B] hover:opacity-80' 
+                    : 'text-gray-800 hover:text-[#FF6B6B]'
+                }`}
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </div>
 
