@@ -61,7 +61,7 @@ export const ContactSection: React.FC = () => {
                   onChange={handleChange}
                   required
                   className="w-full border-b border-gray-300 py-2 font-serif text-lg md:text-xl focus:outline-none focus:border-brand-gold transition-colors bg-transparent"
-                  placeholder="Jane & John Doe"
+                  placeholder="Majnu"
                 />
               </div>
               <div className="group">
@@ -89,7 +89,7 @@ export const ContactSection: React.FC = () => {
                 onChange={handleChange}
                 required
                 className="w-full border-b border-gray-300 py-2 font-serif text-lg md:text-xl focus:outline-none focus:border-brand-gold transition-colors bg-transparent"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91-1234567890"
               />
             </div>
 
