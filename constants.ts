@@ -43,7 +43,7 @@ export const PRESS_LOGOS: PressFeature[] = [
 
 export const STORIES: Story[] = [
   { id: 1, title: "Little Angel's First Smile", category: "Baby Shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg" },
-  { id: 2, title: "Dream Wedding ", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
+  { id: 2, title: "Dream Wedding ", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/dream-wedding.jpg" },
   { id: 3, title: "Destination Wedding ", category: "Destination Weddings", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
   { id: 4, title: "Romantic Pre-Wedding Shoot", category: "Pre & Post Wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Pre-wedding.jpg" },
   { id: 5, title: "Traditional Wedding Ceremony", category: "Wedding Photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
