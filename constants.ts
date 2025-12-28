@@ -52,14 +52,14 @@ export const STORIES: Story[] = [
 
 export const SERVICES: Service[] = [
   { id: 1, title: "Halfsare Portraits", description: "Halfsare Candid Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/half-saree.jpg" },
-  { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
-  { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
+  { id: 2, title: "Bride & Groom Highlights", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/ddd.jpg" },
+  { id: 3, title: "Wedding couple poses", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/dream-wedding.jpg" },
   { id: 4, title: "Wedding Candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wedding.jpeg" },
   { id: 5, title: "Wedding Jewellery - candid's", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/jewellary.jpeg" },
   { id: 6, title: "Maternity photography", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/metenitry.jpeg" },
   { id: 7, title: "Bride Portraits", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/bride-pose.jpeg" },
   { id: 8, title: "Model & Fashion photography", description: "Portfolio, Fashion & Model shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/fashion-port.jpg" },
-  { id: 10, title: "Wedding's", description: "Maxpixlsphotography & Films wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/destination.jpg" },
+  { id: 10, title: "Wedding's", description: "Maxpixlsphotography & Films wedding", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/wed-4.jpeg" },
   { id: 11, title: "Baby shoot", description: "Baby shoots / Birthday & outdoor shoots", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/babygirl.jpg" },
   { id: 12, title: "Pre wedding's", description: "Pre & post wedding's & cover song 4k", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/Pre-wedding.jpg" },
   { id: 13, title: "Wedding photography & Film Services", imageUrl: "https://elitedigital.sfo3.cdn.digitaloceanspaces.com/Maxpixls/hero-4.jpg" },
