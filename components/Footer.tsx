@@ -52,6 +52,13 @@ export const Footer: React.FC<FooterProps> = ({ onTermsClick, onPrivacyClick }) 
           </a>
         </div>
 
+        {/* Service Area */}
+        <div className="text-center mb-8 md:mb-10">
+          <p className="text-sm font-medium text-gray-700">
+            📍 Service Available Across <span className="text-brand-gold font-semibold">Andhra Pradesh & Telangana</span>
+          </p>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-gray-100 pt-6 text-center">
           <div className="flex justify-center gap-4 mb-3">

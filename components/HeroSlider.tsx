@@ -65,6 +65,7 @@ export const HeroSlider: React.FC = () => {
             <img 
               src={img} 
               alt={`Slide ${index + 1}`} 
+              loading={index === 0 ? "eager" : "lazy"}
               className="w-full h-auto md:h-full md:w-full object-contain md:object-cover"
             />
           </div>

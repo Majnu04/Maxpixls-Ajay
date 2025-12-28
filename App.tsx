@@ -1,50 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   Navbar,
   FullScreenMenu,
-  HeroSlider,
-  FeaturedSection,
-  BlogSection,
-  CTASection,
-  ContactSection,
-  Footer,
   WhatsAppButton,
-  VideoGallery,
   TermsModal,
   PrivacyModal,
-  AllStoriesPage
+  Footer
 } from './components';
 
-// --- Main App ---
+// Lazy load heavy components
+const HeroSlider = lazy(() => import('./components').then(m => ({ default: m.HeroSlider })));
+const FeaturedSection = lazy(() => import('./components').then(m => ({ default: m.FeaturedSection })));
+const VideoGallery = lazy(() => import('./components').then(m => ({ default: m.VideoGallery })));
+const BlogSection = lazy(() => import('./components').then(m => ({ default: m.BlogSection })));
+const CTASection = lazy(() => import('./components').then(m => ({ default: m.CTASection })));
+const ContactSection = lazy(() => import('./components').then(m => ({ default: m.ContactSection })));
+const AllStoriesPage = lazy(() => import('./components').then(m => ({ default: m.AllStoriesPage })));
 
-// Page transition variants
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 30,
-    scale: 0.98
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1]
-    }
-  },
-  exit: {
-    opacity: 0,
-    y: -30,
-    scale: 0.98,
-    transition: {
-      duration: 0.4,
-      ease: [0.16, 1, 0.3, 1]
-    }
-  }
-};
+// --- Main App ---
 
 function HomePage({ 
   onMenuToggle, 
@@ -56,26 +30,33 @@ function HomePage({
   onPrivacyClick: () => void;
 }) {
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
+    <div className="page-transition">
       <main>
-        <HeroSlider />
-        <FeaturedSection />
-        <VideoGallery />
-        <BlogSection />
-        <CTASection />
-        <ContactSection />
+        <Suspense fallback={<div className="h-screen bg-gray-50" />}>
+          <HeroSlider />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-white" />}>
+          <FeaturedSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50" />}>
+          <VideoGallery />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-white" />}>
+          <BlogSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-64 bg-gray-50" />}>
+          <CTASection />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-white" />}>
+          <ContactSection />
+        </Suspense>
       </main>
       
       <Footer 
         onTermsClick={onTermsClick}
         onPrivacyClick={onPrivacyClick}
       />
-    </motion.div>
+    </div>
   );
 }
 
@@ -87,18 +68,15 @@ function StoriesPage({
   onPrivacyClick: () => void;
 }) {
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
-      <AllStoriesPage />
+    <div className="page-transition">
+      <Suspense fallback={<div className="h-screen bg-white" />}>
+        <AllStoriesPage />
+      </Suspense>
       <Footer 
         onTermsClick={onTermsClick}
         onPrivacyClick={onPrivacyClick}
       />
-    </motion.div>
+    </div>
   );
 }
 
@@ -152,28 +130,26 @@ function AnimatedRoutes({
   }, [location.pathname]);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location}>
-        <Route 
-          path="/" 
-          element={
-            <HomePage 
-              onMenuToggle={onMenuToggle}
-              onTermsClick={onTermsClick}
-              onPrivacyClick={onPrivacyClick}
-            />
-          } 
-        />
-        <Route 
-          path="/stories" 
-          element={
-            <StoriesPage 
-              onTermsClick={onTermsClick}
-              onPrivacyClick={onPrivacyClick}
-            />
-          } 
-        />
-      </Routes>
-    </AnimatePresence>
+    <Routes location={location}>
+      <Route 
+        path="/" 
+        element={
+          <HomePage 
+            onMenuToggle={onMenuToggle}
+            onTermsClick={onTermsClick}
+            onPrivacyClick={onPrivacyClick}
+          />
+        } 
+      />
+      <Route 
+        path="/stories" 
+        element={
+          <StoriesPage 
+            onTermsClick={onTermsClick}
+            onPrivacyClick={onPrivacyClick}
+          />
+        } 
+      />
+    </Routes>
   );
 }

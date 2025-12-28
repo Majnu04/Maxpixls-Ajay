@@ -21,6 +21,7 @@ export const FeaturedSection: React.FC = () => {
               <img 
                 src={img} 
                 alt={`Gallery ${index + 1}`} 
+                loading="lazy"
                 className="h-full w-auto object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
               />
             </div>

@@ -66,6 +66,9 @@ export const ContactSection: React.FC = () => {
              Whether it's a wedding, baby shoot, fashion portrait, or special event - we'd love to hear about your vision. 
              Fill out the form below and let's create something beautiful together.
           </p>
+          <p className="mt-3 text-brand-gold font-sans text-sm md:text-base font-semibold">
+             📍 Service Available Across Andhra Pradesh & Telangana
+          </p>
           <a 
             href={`https://wa.me/${CONTACT_INFO.phoneNumber}?text=Hi!%20I%20would%20like%20to%20inquire%20about%20your%20photography%20services.`}
             target="_blank"

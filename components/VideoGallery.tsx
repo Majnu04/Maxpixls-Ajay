@@ -31,6 +31,7 @@ export const VideoGallery = () => {
                 src={`https://www.youtube.com/embed/${featuredVideo.videoId}?autoplay=1&mute=1&loop=1&playlist=${featuredVideo.videoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=1&iv_load_policy=3&disablekb=1`}
                 title={featuredVideo.title}
                 frameBorder="0"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -41,6 +42,7 @@ export const VideoGallery = () => {
                 <img
                   src={`https://img.youtube.com/vi/${featuredVideo.videoId}/maxresdefault.jpg`}
                   alt={featuredVideo.title}
+                  loading="eager"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center group cursor-pointer hover:bg-black/40 transition-colors"
@@ -66,6 +68,7 @@ export const VideoGallery = () => {
                     src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=1&iv_load_policy=3&disablekb=1`}
                     title={video.title}
                     frameBorder="0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -76,6 +79,7 @@ export const VideoGallery = () => {
                     <img
                       src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
                       alt={video.title}
+                      loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer hover:bg-black/40 transition-colors"
