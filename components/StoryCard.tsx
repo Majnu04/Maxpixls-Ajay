@@ -16,13 +16,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({ story }) => {
           className="w-full h-full object-cover object-top transform transition-transform duration-700 ease-out group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-        
-        {/* Overlay Category Tag */}
-        <div className="absolute top-4 left-4">
-          <span className="bg-white/90 backdrop-blur text-[10px] md:text-xs font-bold tracking-widest uppercase px-2 py-1 md:px-3 text-gray-900">
-            {story.category}
-          </span>
-        </div>
       </div>
       
       <div className="text-center px-4">
