@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Navbar,
   FullScreenMenu,
@@ -18,6 +19,33 @@ import {
 
 // --- Main App ---
 
+// Page transition variants
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 30,
+    scale: 0.98
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1]
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: -30,
+    scale: 0.98,
+    transition: {
+      duration: 0.4,
+      ease: [0.16, 1, 0.3, 1]
+    }
+  }
+};
+
 function HomePage({ 
   onMenuToggle, 
   onTermsClick, 
@@ -28,7 +56,12 @@ function HomePage({
   onPrivacyClick: () => void;
 }) {
   return (
-    <>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+    >
       <main>
         <HeroSlider />
         <FeaturedSection />
@@ -42,7 +75,7 @@ function HomePage({
         onTermsClick={onTermsClick}
         onPrivacyClick={onPrivacyClick}
       />
-    </>
+    </motion.div>
   );
 }
 
@@ -54,13 +87,18 @@ function StoriesPage({
   onPrivacyClick: () => void;
 }) {
   return (
-    <>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+    >
       <AllStoriesPage />
       <Footer 
         onTermsClick={onTermsClick}
         onPrivacyClick={onPrivacyClick}
       />
-    </>
+    </motion.div>
   );
 }
 
@@ -87,28 +125,55 @@ export default function App() {
         <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
         <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
         
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <HomePage 
-                onMenuToggle={() => setIsMenuOpen(true)}
-                onTermsClick={() => setIsTermsOpen(true)}
-                onPrivacyClick={() => setIsPrivacyOpen(true)}
-              />
-            } 
-          />
-          <Route 
-            path="/stories" 
-            element={
-              <StoriesPage 
-                onTermsClick={() => setIsTermsOpen(true)}
-                onPrivacyClick={() => setIsPrivacyOpen(true)}
-              />
-            } 
-          />
-        </Routes>
+        <AnimatedRoutes 
+          onTermsClick={() => setIsTermsOpen(true)}
+          onPrivacyClick={() => setIsPrivacyOpen(true)}
+          onMenuToggle={() => setIsMenuOpen(true)}
+        />
       </div>
     </Router>
+  );
+}
+
+function AnimatedRoutes({ 
+  onTermsClick, 
+  onPrivacyClick, 
+  onMenuToggle 
+}: { 
+  onTermsClick: () => void;
+  onPrivacyClick: () => void;
+  onMenuToggle: () => void;
+}) {
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location}>
+        <Route 
+          path="/" 
+          element={
+            <HomePage 
+              onMenuToggle={onMenuToggle}
+              onTermsClick={onTermsClick}
+              onPrivacyClick={onPrivacyClick}
+            />
+          } 
+        />
+        <Route 
+          path="/stories" 
+          element={
+            <StoriesPage 
+              onTermsClick={onTermsClick}
+              onPrivacyClick={onPrivacyClick}
+            />
+          } 
+        />
+      </Routes>
+    </AnimatePresence>
   );
 }
